@@ -5,7 +5,7 @@ A responsive front-end skincare shopping website ("skincare bd"), built with HTM
 
 ## Features
 - **Home banner slider:** changes automatically every 5 seconds, with arrows and dots.
-- **Product sections:** New Arrival, Best Selling, Sale and Everyday Favourites (20 products with real photos, prices and discount badges).
+- **Product sections:** New Arrival, Best Selling, Sale and Everyday Favourites (products with real photos, prices and discount badges).
 - **Shopping bag:** Add to Bag, change quantity (+ / -), remove item and live subtotal.
 - **Favourites:** save and remove products with the heart button.
 - **Search:** find products by name, brand or category.
