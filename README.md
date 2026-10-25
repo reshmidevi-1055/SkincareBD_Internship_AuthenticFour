@@ -17,13 +17,6 @@ I worked on the frontend part of the Skincare BD website: a simple, clean and us
 - **Saved in the browser:** bag, favourites and demo accounts stay after refresh (localStorage).
 - **Responsive design:** works on desktop, tablet and mobile (forms too).
 
-## Login and Registration (where to find the code)
-- Pages: `login.html` and `register.html`
-- Styles (responsive): `auth.css`
-- Code and validation: `auth.js`
-
-After a successful login or registration the user returns to the home page and the header shows "HI, NAME · LOGOUT".
-
 ## Technologies Used
 HTML5, CSS3, JavaScript (vanilla), browser localStorage
 
@@ -55,4 +48,5 @@ No installation is needed.
 - Product photos and brand names belong to their owners and are used for learning purposes only.
 
 ## Author
-Reshmi Devi, GitHub: https://github.com/reshmidevi-1055
+Reshmi Devi
+GitHub: https://github.com/reshmidevi-1055
