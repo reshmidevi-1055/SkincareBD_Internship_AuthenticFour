@@ -74,37 +74,11 @@ dots.onclick=e=>{if(e.target.dataset.i){show(+e.target.dataset.i);start()}};
 $("#prevSlide").onclick=()=>{show(cur-1);start()};$("#nextSlide").onclick=()=>{show(cur+1);start()};
 const box=$("#slider");box.onmouseenter=()=>clearInterval(timer);box.onmouseleave=start;show(0);start()})();
 
-// ---- Login / Register (demo, saved in browser localStorage) ----
+// ---- Header LOGIN button: shows the user name after login (forms are in login.html and register.html) ----
 (function(){
-  const U="skincarebd-users",S="skincarebd-user",modal=$("#authModal"),btn=$("#openAuth");
-  const users=()=>readStore(U,[]),session=()=>readStore(S,null);
-  const emailOk=v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-  function paint(){const u=session();btn.textContent=u?"HI, "+u.name.split(" ")[0].toUpperCase()+" · LOGOUT":"LOGIN"}
-  function open(tab){modal.classList.add("show");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";setTab(tab||"login")}
-  function close(){modal.classList.remove("show");modal.setAttribute("aria-hidden","true");document.body.style.overflow=""}
-  function setTab(t){document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===t));$("#loginForm").hidden=t!=="login";$("#registerForm").hidden=t!=="register";$("#loginMsg").textContent=$("#regMsg").textContent=""}
-  function msg(el,text,ok){el.textContent=text;el.className="form-msg"+(ok?" ok":"")}
-  btn.onclick=()=>{if(session()){localStorage.removeItem(S);paint();notify("Logged out")}else open("login")};
-  document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
-  document.querySelectorAll("[data-authclose]").forEach(b=>b.onclick=close);
-  modal.addEventListener("click",e=>{if(e.target===modal)close()});
-  document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
-  $("#registerForm").onsubmit=e=>{e.preventDefault();
-    const name=$("#regName").value.trim(),email=$("#regEmail").value.trim().toLowerCase(),phone=$("#regPhone").value.trim(),p1=$("#regPass").value,p2=$("#regPass2").value,m=$("#regMsg");
-    if(name.length<2)return msg(m,"Please enter your full name.");
-    if(!emailOk(email))return msg(m,"Please enter a valid email address.");
-    if(phone&&!/^01\d{9}$/.test(phone))return msg(m,"Phone must be 11 digits, like 01712345678.");
-    if(p1.length<6)return msg(m,"Password must be at least 6 characters.");
-    if(p1!==p2)return msg(m,"Passwords do not match.");
-    if(users().some(x=>x.email===email))return msg(m,"This email is already registered. Please login.");
-    const list=users();list.push({name,email,phone,password:p1});localStorage.setItem(U,JSON.stringify(list));
-    localStorage.setItem(S,JSON.stringify({name,email}));e.target.reset();paint();close();notify("Account created. Welcome, "+name.split(" ")[0]+"!")};
-  $("#loginForm").onsubmit=e=>{e.preventDefault();
-    const email=$("#loginEmail").value.trim().toLowerCase(),pass=$("#loginPass").value,m=$("#loginMsg");
-    if(!emailOk(email))return msg(m,"Please enter a valid email address.");
-    if(!pass)return msg(m,"Please enter your password.");
-    const u=users().find(x=>x.email===email&&x.password===pass);
-    if(!u)return msg(m,"Wrong email or password. New here? Use the Register tab.");
-    localStorage.setItem(S,JSON.stringify({name:u.name,email:u.email}));e.target.reset();paint();close();notify("Welcome back, "+u.name.split(" ")[0]+"!")};
-  paint();
+  const btn=$("#openAuth"),user=readStore("skincarebd-user",null);
+  if(!user)return;
+  btn.textContent="HI, "+user.name.split(" ")[0].toUpperCase()+" · LOGOUT";
+  btn.href="#";
+  btn.onclick=e=>{e.preventDefault();localStorage.removeItem("skincarebd-user");location.reload()};
 })();

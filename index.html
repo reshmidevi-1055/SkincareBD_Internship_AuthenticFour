@@ -19,7 +19,7 @@
     </nav>
     <div class="header-tools">
       <label class="search"><span>⌕</span><input id="search" placeholder="Search skincare" aria-label="Search products"></label>
-      <button class="login-btn" id="openAuth">LOGIN</button>
+      <a class="login-btn" id="openAuth" href="login.html">LOGIN</a>
       <button class="header-icon" id="openWishlist" aria-label="Open wishlist">♡<i id="wishlistCount">0</i></button>
       <button class="header-icon" id="openCart" aria-label="Open cart">▱<i id="cartCount">0</i></button>
     </div>
@@ -80,28 +80,6 @@
   <div class="shade" id="shade"></div>
   <aside class="drawer" id="cartDrawer" aria-hidden="true"><div class="drawer-head"><h2>Your bag <span id="drawerCartCount">(0)</span></h2><button data-close aria-label="Close cart">×</button></div><div class="drawer-body" id="cartBody"></div><div class="drawer-foot"><div class="total"><span>Subtotal</span><b id="subtotal">৳0</b></div><p>Shipping calculated at checkout.</p><button class="button dark full" id="checkout">CONTINUE TO CHECKOUT ↗</button><small>Demo only — no payment is collected.</small></div></aside>
   <aside class="drawer" id="wishDrawer" aria-hidden="true"><div class="drawer-head"><h2>Saved favourites <span id="drawerWishCount">(0)</span></h2><button data-close aria-label="Close wishlist">×</button></div><div class="drawer-body" id="wishBody"></div></aside>
-  <div class="modal" id="authModal" aria-hidden="true">
-    <div class="modal-box" role="dialog" aria-modal="true" aria-label="Login or register">
-      <button class="modal-close" data-authclose aria-label="Close">×</button>
-      <div class="tabs"><button class="tab active" data-tab="login">Login</button><button class="tab" data-tab="register">Register</button></div>
-      <form id="loginForm" novalidate>
-        <label>Email<input type="email" id="loginEmail" autocomplete="email" placeholder="you@example.com"></label>
-        <label>Password<input type="password" id="loginPass" autocomplete="current-password" placeholder="Your password"></label>
-        <button class="button dark full" type="submit">LOGIN</button>
-        <p class="form-msg" id="loginMsg" role="alert"></p>
-      </form>
-      <form id="registerForm" hidden novalidate>
-        <label>Full name<input type="text" id="regName" autocomplete="name" placeholder="Your name"></label>
-        <label>Email<input type="email" id="regEmail" autocomplete="email" placeholder="you@example.com"></label>
-        <label>Phone (optional)<input type="tel" id="regPhone" autocomplete="tel" placeholder="01XXXXXXXXX"></label>
-        <label>Password<input type="password" id="regPass" autocomplete="new-password" placeholder="At least 6 characters"></label>
-        <label>Confirm password<input type="password" id="regPass2" autocomplete="new-password" placeholder="Type password again"></label>
-        <button class="button dark full" type="submit">CREATE ACCOUNT</button>
-        <p class="form-msg" id="regMsg" role="alert"></p>
-      </form>
-      <p class="demo-note">Demo only: accounts are saved in this browser, not on a server.</p>
-    </div>
-  </div>
   <div class="toast" id="toast" role="status"></div>
   <script src="app.js"></script>
 </body>

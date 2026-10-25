@@ -9,13 +9,20 @@ I worked on the frontend part of the Skincare BD website: a simple, clean and us
 - **Home page layout:** header with logo, menu, search bar, favourites and bag; banner slider; category tiles; product sections; newsletter and footer.
 - **Banner slider:** changes automatically every 5 seconds, with arrows and dots.
 - **Product sections:** New Arrival, Best Selling, Sale and Shop All with real product photos, prices and discount badges.
-- **Login form:** email and password check with clear error messages.
-- **Registration form:** full name, email, optional phone, password and confirm password. Validates email format, password length (at least 6), matching passwords and duplicate emails.
+- **Login page (`login.html`):** email and password check with clear error messages and a "Show password" option.
+- **Registration page (`register.html`):** full name, email, optional phone, password and confirm password. Validates email format, password length (at least 6), matching passwords and duplicate emails.
 - **Shopping bag:** Add to Bag, change quantity (+ / -), remove item and live subtotal.
 - **Favourites:** save and remove products with the heart button.
 - **Search and filters:** search by name, brand or category; filter by Cleanser, Serum, Moisturizer, Sunscreen and Treatment.
 - **Saved in the browser:** bag, favourites and demo accounts stay after refresh (localStorage).
 - **Responsive design:** works on desktop, tablet and mobile (forms too).
+
+## Login and Registration (where to find the code)
+- Pages: `login.html` and `register.html`
+- Styles (responsive): `auth.css`
+- Code and validation: `auth.js`
+
+After a successful login or registration the user returns to the home page and the header shows "HI, NAME · LOGOUT".
 
 ## Technologies Used
 HTML5, CSS3, JavaScript (vanilla), browser localStorage
@@ -23,9 +30,13 @@ HTML5, CSS3, JavaScript (vanilla), browser localStorage
 ## Project Structure
 ```
 SkincareBD_Internship_AuthenticFour/
-├── index.html
-├── styles.css
-├── app.js
+├── index.html        (home page)
+├── styles.css        (home page styles)
+├── app.js            (products, bag, favourites, search, slider)
+├── login.html        (login page)
+├── register.html     (registration page)
+├── auth.css          (login and registration styles)
+├── auth.js           (login and registration code)
 ├── images/products/     (product photos)
 ├── IMAGE_CHECKLIST.md
 └── README.md
@@ -34,7 +45,7 @@ SkincareBD_Internship_AuthenticFour/
 ## How to Run
 1. Download or clone this repository.
 2. Double-click `index.html`, or right-click it in Visual Studio Code and choose **Open with Live Server**.
-3. Click **LOGIN** in the header to try the Login and Register forms. Browse products, add items to the bag, save favourites and try search and filters.
+3. Click **LOGIN** in the header to open the Login page (it has a link to the Register page). Browse products, add items to the bag, save favourites and try search and filters.
 
 No installation is needed.
 

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | skincare bd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@700;800&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+  <header class="auth-top"><a class="back" href="index.html">← BACK TO STORE</a></header>
+  <main class="auth-card">
+    <a class="logo" href="index.html" aria-label="skincare bd home"><svg viewBox="0 0 232 64" role="img" aria-hidden="true"><g transform="translate(32 32)"><g fill="#ff7aa8"><ellipse cx="0" cy="-14" rx="8.5" ry="13"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(60)"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(120)"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(180)"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(240)"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(300)"/></g><circle r="8" fill="#ffd23f"/></g><text x="66" y="42" font-family="Montserrat,Arial,sans-serif" font-weight="800" font-size="30" textLength="162" lengthAdjust="spacingAndGlyphs"><tspan fill="#111">skincare </tspan><tspan fill="#e8336d">bd</tspan></text></svg></a>
+    <h1>Welcome back</h1>
+    <p class="sub">Login to your account to continue shopping.</p>
+    <form id="loginForm" novalidate>
+      <label>Email<input type="email" id="loginEmail" autocomplete="email" placeholder="you@example.com"></label>
+      <label>Password<input type="password" id="loginPass" autocomplete="current-password" placeholder="Your password"></label>
+      <label class="show"><input type="checkbox" id="showPass"> Show password</label>
+      <button class="btn" type="submit">LOGIN</button>
+      <p class="form-msg" id="formMsg" role="alert"></p>
+    </form>
+    <p class="switch">New here? <a href="register.html">Create an account</a></p>
+    <p class="demo-note">Demo only: accounts are saved in this browser, not on a server. Please do not use a real password.</p>
+  </main>
+  <script src="auth.js"></script>
+</body>
+</html>
