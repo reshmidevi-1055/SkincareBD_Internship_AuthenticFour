@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="skincare bd: frontend-only skincare store demo.">
+  <title>skincare bd | Skincare Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@700;800&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
+    <a class="logo" href="#home" aria-label="skincare bd home"><svg viewBox="0 0 232 64" role="img" aria-hidden="true"><g transform="translate(32 32)"><g fill="#ff7aa8"><ellipse cx="0" cy="-14" rx="8.5" ry="13"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(60)"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(120)"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(180)"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(240)"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(300)"/></g><circle r="8" fill="#ffd23f"/></g><text x="66" y="42" font-family="Montserrat,Arial,sans-serif" font-weight="800" font-size="30" textLength="162" lengthAdjust="spacingAndGlyphs"><tspan fill="#111">skincare </tspan><tspan fill="#e8336d">bd</tspan></text></svg></a>
+    <nav id="nav">
+      <a href="#new">NEW ARRIVAL</a><a href="#best">BEST SELLING</a><a href="#sale">SALE</a><a href="#shop">SHOP ALL</a>
+    </nav>
+    <div class="header-tools">
+      <label class="search"><span>⌕</span><input id="search" placeholder="Search skincare" aria-label="Search products"></label>
+      <button class="header-icon" id="openWishlist" aria-label="Open wishlist">♡<i id="wishlistCount">0</i></button>
+      <button class="header-icon" id="openCart" aria-label="Open cart">▱<i id="cartCount">0</i></button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="slider" id="slider" aria-label="Featured banners">
+      <div class="slide promo" style="background:linear-gradient(120deg,#fff1b8,#ffd3e0)"><div class="slide-text"><p class="kicker">SPF50+ EVERY DAY</p><h2>Sun care</h2><p>Light sunscreens that suit Bangladesh weather</p><a class="button dark" href="#shop">SHOP SUNSCREEN</a></div><div class="slide-art" data-art="1,7"></div></div>
+      <div class="slide promo" style="background:linear-gradient(120deg,#d9f5e8,#dcefff)"><div class="slide-text"><p class="kicker">JUST LANDED</p><h2>New arrival</h2><p>Fresh picks from Supergoop!, Numbuzin, Innsaei and Pacifica</p><a class="button dark" href="#new">SEE NEW ARRIVAL</a></div><div class="slide-art" data-art="2,3,4"></div></div>
+      <div class="slide promo" style="background:linear-gradient(120deg,#ffe0ea,#e7defc)"><div class="slide-text"><p class="kicker">LIMITED PRICES</p><h2>Sale</h2><p>The Ordinary, Drunk Elephant, Garnier and more at lower prices</p><a class="button dark" href="#sale">SHOP THE SALE</a></div><div class="slide-art" data-art="9,11,12"></div></div>
+      <button class="slide-arrow prev" id="prevSlide" aria-label="Previous banner">‹</button><button class="slide-arrow next" id="nextSlide" aria-label="Next banner">›</button>
+      <div class="dots" id="dots"></div>
+    </section>
+
+    <section class="benefits">
+      <div><span>✧</span><p><b>Popular skincare brands</b><small>Simple, The Ordinary, Garnier and more</small></p></div>
+      <div><span>♡</span><p><b>Build your routine</b><small>Find products by category</small></p></div>
+      <div><span>✦</span><p><b>Cash on delivery</b><small>Demo store, no payment taken</small></p></div>
+    </section>
+
+    <section class="section categories" id="routine">
+      <div class="section-title"><div><p class="kicker">START WITH THE BASICS</p><h2>Your routine, your way.</h2></div><a class="underlink" href="#shop">SHOP ALL ↗</a></div>
+      <div class="category-grid">
+        <button class="category c1" data-category="Cleanser"><small>01 — CLEANSE</small><b>Cleanse<br>& refresh</b><span>↗</span></button>
+        <button class="category c2" data-category="Serum"><small>02 — TREAT</small><b>Targeted<br>serums</b><span>↗</span></button>
+        <button class="category c3" data-category="Moisturizer"><small>03 — HYDRATE</small><b>Comfort<br>your skin</b><span>↗</span></button>
+        <button class="category c4" data-category="Sunscreen"><small>04 — PROTECT</small><b>Daily sun<br>care</b><span>↗</span></button>
+      </div>
+    </section>
+
+    <section class="section" id="new"><div class="section-title center"><div><p class="kicker">FRESH ON THE SHELF</p><h2>New arrival</h2></div></div><div class="products" id="newGrid"></div></section>
+
+    <section class="section" id="best"><div class="section-title center"><div><p class="kicker">LOVED BY CUSTOMERS</p><h2>Best selling</h2></div></div><div class="products" id="bestGrid"></div></section>
+
+    <section class="section" id="sale"><div class="section-title center"><div><p class="kicker">LIMITED PRICES</p><h2>Sale</h2></div></div><div class="products" id="saleGrid"></div></section>
+
+    <section class="section shop" id="shop">
+      <div class="section-title shop-heading"><div><p class="kicker">THE COMMUNITY'S PICKS</p><h2>Everyday favourites</h2></div><div class="filters" id="filters"><button class="filter active" data-filter="All">All</button><button class="filter" data-filter="Cleanser">Cleanser</button><button class="filter" data-filter="Serum">Serum</button><button class="filter" data-filter="Moisturizer">Moisturizer</button><button class="filter" data-filter="Sunscreen">Sunscreen</button><button class="filter" data-filter="Treatment">Treatment</button></div></div>
+      <div class="products" id="shopGrid"></div>
+      <p class="disclaimer">Student demo storefront. Prices and availability are illustrative, not live inventory.</p>
+    </section>
+
+    <section class="newsletter">
+      <div><p class="kicker">A LITTLE LOVE IN YOUR INBOX</p><h2>Let's talk good skin days.</h2><p>New arrivals, routine ideas and little reminders to take a moment for yourself.</p></div>
+      <form id="newsletterForm"><input type="email" required placeholder="Your email address" aria-label="Your email address"><button class="button dark" type="submit">COUNT ME IN ↗</button></form>
+      <span class="newsletter-result" id="newsletterResult" aria-live="polite"></span>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main"><a class="logo" href="#home" aria-label="skincare bd home"><svg viewBox="0 0 232 64" role="img" aria-hidden="true"><g transform="translate(32 32)"><g fill="#ff7aa8"><ellipse cx="0" cy="-14" rx="8.5" ry="13"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(60)"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(120)"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(180)"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(240)"/><ellipse cx="0" cy="-14" rx="8.5" ry="13" transform="rotate(300)"/></g><circle r="8" fill="#ffd23f"/></g><text x="66" y="42" font-family="Montserrat,Arial,sans-serif" font-weight="800" font-size="30" textLength="162" lengthAdjust="spacingAndGlyphs"><tspan fill="#111">skincare </tspan><tspan fill="#e8336d">bd</tspan></text></svg></a><p>Skincare store demo for an internship project.</p></div>
+    <div><h3>DISCOVER</h3><a href="#shop">Shop all</a><a href="#new">New arrival</a><a href="#sale">Sale</a></div>
+    <div><h3>THE DETAILS</h3><a href="#best">Best selling</a><a href="#footerEnd">Shipping info</a><a href="#footerEnd">Contact</a></div>
+    <div><h3>STAY IN THE LOOP</h3><p>Beauty, balance & little rituals.</p><div class="social"><a href="#footerEnd">ig</a><a href="#footerEnd">f</a><a href="#footerEnd">♪</a></div></div>
+    <div class="footer-bottom" id="footerEnd"><span>© 2026 skincare bd · Student frontend project</span><span>Internship project</span></div>
+  </footer>
+
+  <div class="shade" id="shade"></div>
+  <aside class="drawer" id="cartDrawer" aria-hidden="true"><div class="drawer-head"><h2>Your bag <span id="drawerCartCount">(0)</span></h2><button data-close aria-label="Close cart">×</button></div><div class="drawer-body" id="cartBody"></div><div class="drawer-foot"><div class="total"><span>Subtotal</span><b id="subtotal">৳0</b></div><p>Shipping calculated at checkout.</p><button class="button dark full" id="checkout">CONTINUE TO CHECKOUT ↗</button><small>Demo only — no payment is collected.</small></div></aside>
+  <aside class="drawer" id="wishDrawer" aria-hidden="true"><div class="drawer-head"><h2>Saved favourites <span id="drawerWishCount">(0)</span></h2><button data-close aria-label="Close wishlist">×</button></div><div class="drawer-body" id="wishBody"></div></aside>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
